@@ -89,6 +89,11 @@ public class MainActivity extends AppCompatActivity {
                         if(j==2)
                             gamesolver=false;
                     }
+                    for (int[] k : winningpositions) {
+                        if (gameStatus[k[0]] == gameStatus[k[1]] && gameStatus[k[1]] == gameStatus[k[2]] && gameStatus[k[0]] != 2){
+                            gamesolver=false;
+                        }
+                    }
                     if (gamesolver)
                     {
                         Toast.makeText(MainActivity.this,"Draw game",Toast.LENGTH_SHORT).show();
